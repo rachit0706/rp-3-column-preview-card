@@ -1,12 +1,15 @@
 html,
 body {
   min-height: 100vh;
+  font-size: 15px;
 }
+
 body {
   padding: 0;
   margin: 0;
   background-color: hsl(0, 0%, 95%);
 }
+
 main {
   min-height: 100vh;
   display: flex;
@@ -14,38 +17,44 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 .grid-container {
   border: 1px solid hsl(0, 0%, 95%);
   border-radius: 12px;
-  width: auto;
-  height: auto;
-  margin: 3rem;
+  max-width: 50rem;
+  margin: 1rem;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
 }
+
 .column {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  height: 20rem;
   padding: 2.5rem;
 }
+
 .column img {
   margin-bottom: 1rem;
 }
-.column h1 {
+
+.column h2 {
   font-family: 'Big Shoulders Display';
   font-weight: 700;
+  font-size: 2rem;
   color: hsl(0, 0%, 95%);
 }
+
 .column p {
   font-family: 'Lexend Deca';
   font-weight: 400;
   font-size: 15px;
   color: hsla(0, 0%, 100%, 0.75);
 }
+
 .column .button {
   color: hsl(0, 0%, 95%);
   border-radius: 1.5rem;
@@ -62,27 +71,41 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 .column .button:hover {
   border: 4px solid hsla(0, 0%, 100%, 0.75);
   background-color: inherit;
   color: hsla(0, 0%, 100%, 0.75);
   cursor: pointer;
 }
+
 .first {
   background-color: hsl(31, 77%, 52%);
 }
+
 .first .button {
   color: hsl(31, 77%, 52%);
 }
+
 .second {
   background-color: hsl(184, 100%, 22%);
 }
+
 .second .button {
   color: hsl(184, 100%, 22%);
 }
+
 .third {
   background-color: hsl(179, 100%, 13%);
 }
+
 .third .button {
   color: hsl(179, 100%, 13%);
+}
+
+@media screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
 }
